@@ -1,0 +1,19 @@
+<%= simple_form_for(@voting, html: { class: 'form-horizontal' } )do |f| %>
+  <% if @voting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voting.errors.count, "error") %> prohibited this voting from being saved:</h2>
+
+      <ul>
+      <% @voting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.input :postcode %>
+   	<%= f.input :vote, as: :boolean, checked_value: true, unchecked_value: false, label: "Are you going to vote?" %>
+    <%= f.input :party, priority: [ "Labour" ], collection: [ "Labour", "Conservatives", "Liberal", "Democratic" ], label: "Which Party?" %>
+  <div class="actions">
+    <%= f.submit "Enter", :class => "btn btn-success" %>
+  </div>
+<% end %>

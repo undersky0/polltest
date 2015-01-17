@@ -1,0 +1,41 @@
+
+<%=content_for :script do %>
+<%=javascript_include_tag "chartkick"%>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%end%>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+		<%= pie_chart Voting.group(:party).count%>
+		</div>
+	</div>
+</div>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @voting.postcode %>
+</p>
+
+<p>
+  <strong>Parliamentary:</strong>
+  <%= @voting.parliamentary %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @voting.party %>
+</p>
+
+<p>
+  <strong>Vote:</strong>
+  <%= @voting.vote %>
+</p>
+
+<%= link_to 'Edit', edit_voting_path(@voting) %> |
+<%= link_to 'Back', votings_path %>

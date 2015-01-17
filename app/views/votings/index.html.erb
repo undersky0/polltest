@@ -1,0 +1,27 @@
+
+<%=content_for :script do %>
+<%=javascript_include_tag "chartkick"%>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%end%>
+<div class="btn-group btn-group-justified"
+</div>
+<h1>Overall Party Votes: <%= @data.count%></h1>
+<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<%= pie_chart @votings.group(:party).count%>
+		</div>
+		<div class="col-md-6">
+			<h1>Votes By parliamentary area</h1>
+			<% @votes.each do |f, t| %>
+			<a><p class="bg-primary"><strong><%= f.humanize%> vote count: <%=t.count%></strong></p></a>
+			<% data = Hash[t.map {|a| [a.party, t.select {|b| b["party"] == a.party}.count  ]}]%>
+			<%=bar_chart data %>
+			</br>
+			</ul>
+			</li>
+			<% end %>
+		</div>
+	</div>
+</div>
