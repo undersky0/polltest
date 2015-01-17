@@ -17,7 +17,7 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'friendly_id', '5.0.4'
 gem 'kaminari'
-
+gem 'rails_12factor'
 group :development, :test do
   gem 'byebug', '3.5.1'
   gem 'web-console', '2.0.0'
