@@ -1,25 +1,9 @@
-# README
+# A Strawpoll & Chart test by Richard D'Lonesteen
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test for creating charts and polls.
 
-Things you may want to cover:
+Context:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+	* it asks user for postcode
+	* it retrieves users parliamentary area by postcode from Postcodes.io API
+	* it displays resuts charts for parliamentary votes and party votes
