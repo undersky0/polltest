@@ -6,4 +6,4 @@ Context:
 
 	* it asks user for postcode
 	* it retrieves users parliamentary area by postcode from Postcodes.io API
-	* it displays resuts charts for parliamentary votes and party votes
+	* it displays results in charts for parliamentary votes and party votes
